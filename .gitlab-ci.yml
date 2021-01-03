@@ -10,7 +10,7 @@ build:
   stage: build
   needs: []
   script:
-    - create-pdf.sh
+    - ./create-pdf.sh
   artifacts:
     paths:
       - "*.pdf"
@@ -19,7 +19,7 @@ pages:
   stage: deploy
   needs: []
   script:
-    - create-html.sh
+    - ./create-html.sh
   artifacts:
     paths:
       - public

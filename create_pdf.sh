@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SG_DIR=Style-Guide
 

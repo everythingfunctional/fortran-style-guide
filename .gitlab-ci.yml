@@ -10,10 +10,7 @@ build:
   stage: build
   needs: []
   script:
-    - pwd
-    - ls
-    - ls Style-Guide
-    - ./create-pdf.sh
+    - ./create_pdf.sh
   artifacts:
     paths:
       - "*.pdf"
@@ -22,10 +19,7 @@ pages:
   stage: deploy
   needs: []
   script:
-    - pwd
-    - ls
-    - ls Style-Guide
-    - ./create-html.sh
+    - ./create_html.sh
   artifacts:
     paths:
       - public

@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+
+image:
+  name: pandoc/latex:latest
+  entrypoint: [""]
+
+build:
+  stage: build
+  needs: []
+  script:
+    - create-pdf.sh
+  artifacts:
+    paths:
+      - "*.pdf"
+
+pages:
+  stage: deploy
+  needs: []
+  script:
+    - create-html.sh
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - main

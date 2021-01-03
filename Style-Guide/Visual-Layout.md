@@ -1,11 +1,11 @@
 # Visual Layout
 
 The visual structure of code alone can communicate a wealth of information to the reader, without even focusing on the letters or words used.
-As an example, see Figure\ \ref{fig:visual-layout-example} where I’ve simply used rectangles in place of the text of the code.
+As an example, see the figure below where I’ve simply used rectangles in place of the text of the code.
 It immediately becomes recognizable as a procedure, with an argument list, declarations, and the body of the code with what is likely an if/else block.
 The layout communicates all this information without a single, legible character needed.
 
-![Visual Layout Example\label{fig:visual-layout-example}](Style-Guide/figures/visual-layout-example.png)
+![Visual Layout Example](Style-Guide/figures/visual-layout-example.png)
 
 ## Indentation
 

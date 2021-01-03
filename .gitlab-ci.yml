@@ -10,6 +10,8 @@ build:
   stage: build
   needs: []
   script:
+    - ls
+    - cat create_pdf.sh
     - ./create_pdf.sh
   artifacts:
     paths:

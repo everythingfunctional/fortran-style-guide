@@ -10,19 +10,40 @@ build:
   stage: build
   needs: []
   script:
-    - ./create-pdf.sh
+    - pandoc -C -o Style-Guide.pdf \
+        Style-Guide/Front-Matter.md \
+        Style-Guide/Motivation.md \
+        Style-Guide/Visual-Layout.md \
+        Style-Guide/Names.md \
+        Style-Guide/Code-Organization.md \
+        Style-Guide/Programming-Constructs.md \
+        Style-Guide/Comments.md \
+        Style-Guide/Additional-Resources.md \
+        Style-Guide/References.md
   artifacts:
     paths:
       - "*.pdf"
+    expire_in: 30 days
 
 pages:
   stage: deploy
   needs: []
   script:
-    - ./create-html.sh
+    - mkdir -p public
+    - mkdir -p public/Style-Guide
+    - cp -a Style-Guide/figures public/Style-Guide
+    - pandoc -C -o public/index.html \
+        Style-Guide/Front-Matter.md \
+        Style-Guide/Motivation.md \
+        Style-Guide/Visual-Layout.md \
+        Style-Guide/Names.md \
+        Style-Guide/Code-Organization.md \
+        Style-Guide/Programming-Constructs.md \
+        Style-Guide/Comments.md \
+        Style-Guide/Additional-Resources.md \
+        Style-Guide/References.md
   artifacts:
     paths:
       - public
-    expire_in: 30 days
   only:
     - main
